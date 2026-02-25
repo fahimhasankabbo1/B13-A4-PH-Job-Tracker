@@ -140,18 +140,27 @@ document.addEventListener("click", function (e) {
   if (!job) return;
 
   if (e.target.classList.contains("interview-btn")) {
-    if(job.status !== "interview") {
-      selectedCount++;
-      job.status = "interview";
-    }
+  if (job.status === "interview") {
+    job.status = "all";
+    selectedCount--;
+  } 
+  else {
+    if (job.status === "all") selectedCount++;
+    job.status = "interview";
   }
+}
 
-  if (e.target.classList.contains("rejected-btn")) {
-    if(job.status !== "rejected") {
-      selectedCount++;
-      job.status = "rejected";
-    }
+if (e.target.classList.contains("rejected-btn")) {
+
+  if (job.status === "rejected") {
+    job.status = "all";
+    selectedCount--;
+  } 
+  else {
+    if (job.status === "all") selectedCount++;
+    job.status = "rejected";
   }
+}
 
   if (e.target.classList.contains("delete-btn")) {
     const index = jobs.findIndex(j => j.id === id);

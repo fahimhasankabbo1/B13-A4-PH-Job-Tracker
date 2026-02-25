@@ -158,6 +158,16 @@ body {
   border-color: #dc2626;
 }
 
+.interview-btn.active {
+  background: #16a34a;
+  color: white;
+}
+
+.rejected-btn.active {
+  background: #dc2626;
+  color: white;
+}
+
 .rejected-btn:hover {
   background: #dc2626;
   color: white;
